@@ -635,3 +635,24 @@ section {
         margin: 0 auto !important;
     }
 }
+
+/* ==========================================================================
+   CONTACT FORM PLACEHOLDER COLOR FIX
+   ========================================================================== */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important; 
+    opacity: 1 !important; 
+}
+
+
+.form-control {
+    color: #ffffff !important; 
+    font-size: 0.95rem !important;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
