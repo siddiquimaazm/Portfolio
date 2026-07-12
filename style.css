@@ -656,3 +656,9 @@ textarea::placeholder {
     color: rgba(255, 255, 255, 0.6) !important;
     opacity: 1 !important;
 }
+
+/* Visitor Counter Animation Matrix */
+.visitor-counter-wrapper img {
+    display: inline-block;
+    vertical-align: middle;
+}
