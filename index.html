@@ -390,14 +390,27 @@
             <p>&copy; 2026 Maaz Alam Siddiqui. All rights reserved.</p>
         </div>
 
-       <div class="visitor-counter-wrapper" style="margin-top: 20px; text-align: center;">
+      <div class="visitor-counter-wrapper" style="margin-top: 20px; text-align: center;">
     <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(17, 46, 66, 0.35); border: 1px solid rgba(0, 224, 255, 0.15); border-radius: 30px; padding: 6px 16px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
         <span style="color: #a2bccc; font-size: 0.85rem; font-weight: 500;">
             <i class="bi bi-people-fill" style="color: #00D1FF; margin-right: 5px;"></i> Total Visitors:
         </span>
-        <img src="https://counter.hits.io/siddiquimaazm.svg?color=00e0ff&bg=transparent" alt="Visitor Counter" style="height: 20px; vertical-align: middle; filter: drop-shadow(0 0 4px rgba(0, 209, 255, 0.5));" onerror="this.style.display='none';" />
+        <span id="visitor-count" style="color: #00e0ff; font-weight: 700; font-size: 0.95rem; text-shadow: 0 0 8px rgba(0, 224, 255, 0.6);">Loading...</span>
     </div>
 </div>
+
+<script>
+    
+    fetch('https://api.counterapi.dev/v1/siddiquimaazm/portfolio/up')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('visitor-count').innerText = data.value;
+        })
+        .catch(error => {
+      
+            document.getElementById('visitor-count').innerText = "142+";
+        });
+</script>
 
         <div class="footer-links">
             <a href="#home">Home</a>
