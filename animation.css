@@ -320,42 +320,68 @@
       }
       
       .my-services h2 {
-        font-size: 3rem;
-        color: white;
-      }
-      
-      .highlight {
-        color: #00e0ff;
-      }
-      
-      .service-card {
-        background-color: #252729a1;
-        border: 2px solid transparent;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-      
-      .service-card:hover {
-        border-color: #00e0ff;
-      }
-      
-      .service-icon {
-        font-size: 3rem;
-        color: #00e0ff;
-        margin-bottom: 20px;
-      }
-      
-      .service-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-      }
-      
-      .service-description {
-        font-size: 1rem;
-        margin-bottom: 30px;
-      }
-      
+  font-size: 3rem;
+  color: white;
+}
+
+.highlight {
+  color: #00e0ff;
+}
+
+/* 1. Force row to stretch all columns equally */
+.my-services .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important; /* Force fully equal height for all columns */
+}
+
+/* 2. Force the column wrapper to pass height to child */
+.my-services .row > [class*='col-'] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 3. Force Service Card to fill exact 100% column height */
+.service-card {
+  background-color: #252729a1;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  /* Flexbox magic to equalize cards */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  height: 100% !important; /* Forces all cards to match the highest card */
+  box-sizing: border-box;
+}
+
+.service-card:hover {
+  border-color: #00e0ff;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #00e0ff;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
       /* Button */
       .btn-primary {
         background-color: #00e0ff;

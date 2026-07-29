@@ -763,3 +763,60 @@ textarea::placeholder {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
+
+/* Services Container Fix */
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Sabhi boxes ki height barabar karta hai */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Individual Service Box Fix */
+.services-box {
+    flex: 1; /* Teeno boxes ko SAME width deta hai */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+/* Hover Border Glow */
+.services-box:hover {
+    border-color: #00eeff;
+    transform: translateY(-5px);
+    box-shadow: 0 0 1.5rem rgba(0, 238, 255, 0.25);
+}
+
+/* Icons Size Fix */
+.services-box i {
+    font-size: 2.8rem;
+    color: #00eeff;
+    margin-bottom: 1.2rem;
+}
+
+/* Headings Fix */
+.services-box h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Description Text Fix */
+.services-box p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0;
+}
